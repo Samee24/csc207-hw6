@@ -12,4 +12,4 @@ Making them separate allows us to distinguish between non-food and food objects.
 
 4) Professor Walker also includes length, width fields for package, which is a bit confusing as the subsequent shopping cart class doesn’t have a physical size/limit defined. I wouldn’t include those fields, personally (unless the shopping cart had a physical limit, which then would be helpful).
 
-5) There’s also no mention of weight within Professor Walker’s cart class, which is again very confusing as the items include fields for weight. In our implementation we had a getWeight() method attached to our shopping cart which, I would assume, is helpful. 
+5) There’s also no mention of weight within Professor Walker’s cart class, which is again very confusing as the items include fields for weight. In our implementation we had a getWeight() method attached to our shopping cart which, I would assume, is helpful.  
