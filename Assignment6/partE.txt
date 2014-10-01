@@ -1,0 +1,15 @@
+BulkItem and BulkContainer are mostly the same, however the latter takes in a string that describes the “container”. For instance, using BulkItem you might get something like “2 pounds of apples”, however for BulkContainer we would get something like “Bag of 2 pounds of apples”. If you want to add additional information, then BulkContainer would be fine - but personally, I find BulkItem to be sufficient. 
+
+By putting a getName() method in the Item interface, we will be implying that every class implementing the Item interface is required to have that method. I dislike using an equals method, since it would override the existing equals implementation. Personally, I’d add the getName() method to each individual class.
+
+Making them separate allows us to distinguish between non-food and food objects. Even though they’re the same, the names alone could be of moderate benefit. We could perhaps include a boolean in the package class that would indicate whether the package is food or non food - this would be better as it would still provide us with a method to realize whether the package is food or non food and save us from writing a new class.
+
+1) Professor Walker’s design includes using doubles instead of ints for measurements. This would mean his prices are in dollars, as opposed to cents and units are more precise. However, this can give us estimation/rounding problems. But, it allows for more flexibility in terms of entering more specific amounts (for units), and more readable values (for prices in dollars).
+
+2) Professor Walker also differentiates between beverages and regular food, a distinction not present in our work. This allows a user to be more specific, but this could also be utilized by having a generic food class and having a descriptor (boolean, maybe?).
+
+3) The Produce category also has a category field which allows someone to enter a more specific form of Produce (like nuts, vegetables, meat etc). We don’t have that present in our implementation as it solely depends not the user to enter the exact name of the thing they are entering. The category field could potentially be beneficial if our implementation expanded and we’d want to sort our items, our just pick out specific categories.
+
+4) Professor Walker also includes length, width fields for package, which is a bit confusing as the subsequent shopping cart class doesn’t have a physical size/limit defined. I wouldn’t include those fields, personally (unless the shopping cart had a physical limit, which then would be helpful).
+
+5) There’s also no mention of weight within Professor Walker’s cart class, which is again very confusing as the items include fields for weight. In our implementation we had a getWeight() method attached to our shopping cart which, I would assume, is helpful. 
